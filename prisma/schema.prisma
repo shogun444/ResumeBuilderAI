@@ -1,0 +1,75 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User{
+  id String @id @default(cuid())
+  name String
+  email String @unique
+  resume Resume[]
+}
+
+model Resume{
+  id String @id @default(cuid())
+  userId String
+  user User @relation(fields: [userId],references: [id])
+  tittle String?
+  description String?
+  photourl String?
+   colorHex String @default("#000000")
+   summary String?
+   firstname String?
+   lastname String?
+   jobtitle String?
+   city String?
+   country String?
+   phone String?
+   email String?
+    githublink String?
+    linkedin String?
+   createdAt DateTime @default( now())
+   updatedAt DateTime @updatedAt
+
+   experience WorkExperience[]
+    education Education[]
+    skills String[]
+}
+model WorkExperience{
+  id String @id @default(cuid())
+  postion String?
+  company String?
+  startDate DateTime?
+  endDate DateTime?
+  description String?
+
+  resumeId String
+  resume Resume @relation(fields: [resumeId],references: [id])
+
+     createdAt DateTime @default( now())
+   updatedAt DateTime @updatedAt
+
+  
+}
+
+model Education{
+  id String @id @default(cuid())
+  degree String?
+  collegeName String?
+  school String?
+  startDate DateTime?
+  endDate DateTime?
+  resumeId String
+  resume Resume @relation(fields: [resumeId],references: [id])
+}
+
