@@ -32,12 +32,12 @@ const arrowvarients ={
   
 <div
   className="h-screen p-1 w-full pt-28 md:pt-20 justify-center items-center mask-t-from-95% md:mask-t-from-80% md:mask-l-from-65% md:mask-r-from-80% 
-  md:bg-[radial-gradient(circle,rgba(255,255,255,0.15)_0.1px,transparent_1.9px),linear-gradient(to_right,rgba(255,255,255,0.05)_1.6px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1.3px,transparent_1px)] md:bg-[length:60px_60px] md:bg-[position:-19px_48px,center,center]
+  md:bg-[radial-gradient(circle,rgba(255,255,255,0.15)_0.1px,transparent_1.9px),linear-gradient(to_right,rgba(255,255,255,0.05)_1.6px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1.3px,transparent_1px)] md:bg-[length:60px_60px] md:bg-[position:-20px_6px,center,center]
   "
 >
 
     
-  <div className="w-fit relative  rounded-4xl  flex mx-auto justify-center items-center">
+  <div className="w-fit relative mt-4 rounded-4xl  flex mx-auto justify-center items-center">
     <div className="blur-sm animate-pulse transition-transform inset-1 absolute bg-gradient-to-r from-pink-500 via-purple-500 to-red-500 rounded-4xl"></div>
    
    <div className="relative bg-neutral-800 p-3 rounded-4xl z-10 flex items-center "> 
