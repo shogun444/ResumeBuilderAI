@@ -1,10 +1,11 @@
 'use client'
 
-import Footer from "@/components/landingPage/footer"
+
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { FileUserIcon, PenLineIcon } from "lucide-react"
 import { useTheme } from "next-themes"
+import Footer from "./Footer"
 
 
 interface preview{ 

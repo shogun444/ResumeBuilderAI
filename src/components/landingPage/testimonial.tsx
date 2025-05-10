@@ -45,7 +45,7 @@ export default function Testimonial(){
   transition={ {
     repeat : Infinity,
     repeatType : 'loop',
-    duration : 15,
+    duration : 5,
     ease : 'linear'
   }}
   className="flex w-max gap-10">

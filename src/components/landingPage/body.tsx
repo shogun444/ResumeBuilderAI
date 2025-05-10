@@ -95,7 +95,7 @@ const parentVarient ={
   hidden : {opacity  : 0 ,},
   visible : {
     opacity :1,
-    transition : {staggerChildren : 0.2 }
+    transition : {staggerChildren : 0.1 }
   }
 }
 const childrenVarient ={
@@ -124,7 +124,7 @@ const childrenVarient ={
   <h1
 
 
-  className="md:pt-26 p-2 text-4xl  md:text-6xl bg-gradient-to-r bg-clip-text text-transparent  from-neutral-400  via-neutral-700 to-neutral-300 font-semibold">Powerful features to build your perfect resume
+  className="md:pt-26 p-2 text-4xl  md:text-5xl bg-gradient-to-r bg-clip-text text-transparent  from-neutral-400  via-neutral-700 to-neutral-300 font-semibold">Powerful features to build your perfect resume
     </h1>
       <motion.h1
       initial={{
@@ -143,19 +143,18 @@ const childrenVarient ={
       className="bg-gradient-to-r pt-7  font-semibold text-xs md:text-2xl from-neutral-300  to-neutral-500 bg-clip-text text-transparent">  Our platform offers everything you need to create <br />professional, ATS-friendly resumes  that help you land interviews. </motion.h1>
      
      <motion.div 
-     whileInView={{
-      opacity :1
-     }}
+     whileInView='visible'
      variants={parentVarient}
       initial = 'hidden'
-      animate = 'visible'
-     className="md:grid md:grid-cols-3 flex flex-col md:p-40 items-center  ">
+  
+      
+     className="md:grid md:grid-cols-3 flex flex-col p-3 items-center  ">
    
    {features.map((itm,index)=>(
     <motion.div 
 
     variants={childrenVarient}
-    key={index} className="hover:scale-101 transition-transform delay-75 cursor-pointer px-5 relative py-12 m-6 md:w-135 bg-gradient-to-b from-zinc-900 to-neutral-950 rounded-2xl shadow-lg border-1">
+    key={index} className="hover:scale-101 transition-transform delay-75 cursor-pointer px-5 relative py-12 m-6  bg-gradient-to-b from-zinc-900 to-neutral-950 rounded-2xl shadow-lg border-1">
     <div 
       className="absolute blur-md    bottom-0 inset-x-40   w-[40%] h-[1px]  bg-gradient-to-r from-cyan-600 to-blue-600"></div>
      
@@ -191,26 +190,19 @@ const childrenVarient ={
       y : 0
     }}
     className="md:text-5xl text-4xl bg-gradient-to-r bg-clip-text text-transparent via-neutral-400 to-neutral-300  font-semibold  text-center pt-43 pb-2 md:pb-6">Simple pricing </motion.h1>
-    <motion.h1 
-    initial={{
-      filter : 'blur(5px)'
-    }}
-    animate = {{
-      filter : 'blur(0px)'
-    }}
-    transition={ {
-    duration : 0.3
-    }}
-    className="md:text-xl text-xs text-neutral-200 text-center "> Choose the plan that works best for your career stage. No hidden fees.</motion.h1>
+    <h1 
+
+    className="md:text-xl text-xs text-neutral-200 text-center "> Choose the plan that works best for your career stage. No hidden fees.</h1>
 
 
-    <div className="md:grid flex flex-col md:grid-cols-3 md:p-28 md:px-85">
+    <motion.div variants={parentVarient} whileInView='visible' initial='hidden' className="md:grid flex items-center justify-center flex-col md:grid-cols-3 md:p-20 md:px-25">
     {pricing.map((itm, index) => (
 
 
-  <div
+  <motion.div
+  variants={childrenVarient}
     key={index}
-    className={`${itm.head === 'Pro' && 'md:scale-112 border-1  border-slate-400'} text-neutral-50 bg-zinc-900 border-2 rounded-xl mx-auto mt-8 md:mx-15  md:h-158 w-90 md:w-99 pt-5 pb-10 px-4 flex flex-col justify-between`}
+    className={`${itm.head === 'Pro' && 'md:scale-112 border-1  border-slate-400'} text-neutral-50 bg-zinc-900 border-2 rounded-xl mx-auto mt-8 md:mx-15  md:h-138 w-90 md:w-79 pt-5 pb-10 px-4 flex flex-col justify-between`}
   >
     <div>
       <div className="flex justify-between">
@@ -237,13 +229,13 @@ const childrenVarient ={
 
     {/* Button pushed to bottom */}
     <div className="flex justify-center mt-2 ">
-      <Button  variant={'outline'} className="w-50 text-md text-neutral-950">{itm.button}</Button>
+      <Button  variant={'outline'} className="w-50 mt-6 text-md text-neutral-50">{itm.button}</Button>
     </div>
-  </div>
+  </motion.div>
   
 ))}
 
-    </div>
+    </motion.div>
    </motion.div>
    <motion.div
   className="min-h-screen pt-34 w-full bg-neutral-950"
@@ -258,11 +250,17 @@ const childrenVarient ={
   </motion.h1>
 
   <motion.div 
-  initial={{opacity : 0,y:50}}
-  animate={{opacity :1 , y :0}}
+  initial='hidden'
+  whileInView='visible'
+  transition={{
+    duration : 0.5,
+    ease : 'easeInOut'
+  }}
+  variants={parentVarient}
   className="max-w-4xl mx-auto px-4 pt-12">
     {accordian.map((item, index) => (
-      <div
+      <motion.div
+      variants={childrenVarient}
         key={index}
         onClick={() => handleClick(index)}
         className="cursor-pointer my-4 p-4 border border-neutral-700 rounded-xl transition-colors hover:bg-neutral-900"
@@ -289,7 +287,7 @@ const childrenVarient ={
             </motion.p>
           )}
         </AnimatePresence>
-      </div>
+      </motion.div>
     ))}
   </motion.div>
 </motion.div>

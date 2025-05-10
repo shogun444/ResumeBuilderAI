@@ -1,10 +1,12 @@
+'use client'
 
+import { useTheme } from "next-themes"
 
 export default function Footer(){
-
+const {theme} = useTheme()
    return(<>
   
-  <footer className={`p-8 border-t-1  md:px-40 bg-neutral-950  text-neutral-700 text-sm `}>
+  <footer className={`p-8 border-t-1  md:px-40 ${theme==='dark'? 'bg-neutral-950 border-neutral-600 shadow-lg ' : 'bg-neutral-50 shadow-lg border-neutral-200' }  text-neutral-700 text-sm `}>
     <div className="md:flex md:justify-around  md:items-center">
       <div className="items-center flex justify-center"> 
         <img className="rounded-3xl h-17 flex items-center"  src='/Logo.jpeg' alt="" /> 

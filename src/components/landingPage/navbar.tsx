@@ -15,16 +15,16 @@ features : ['Features',
 
   return(<>
   
-  <div className=" w-full h-15 flex items-center justify-between md:px-45 p-10   bg-black">
-    <div className="justify-between flex items-center "><SquarePen size={30} className="pr-1 text-neutral-300"/> <h1 className="md:text-2xl font-semibold text-neutral-300">ResumeBuilder </h1></div>
+  <div className=" w-full  h-10 flex items-center justify-between md:px-45 p-7   bg-black">
+    <div className="justify-between flex items-center "><SquarePen size={30} className="pr-1 text-purple-700"/> <h1 className="md:text-lg font-semibold text-purple-800">ResumeBuilder </h1></div>
    
-   <div className=" md:block hidden space-x-10">{content.features.map((itm,index)=>(<span className="text-xl text-neutral-300" key={index}>{itm}</span>))}</div>
+   <div className=" md:block hidden space-x-10">{content.features.map((itm,index)=>(<span className="text-lg text-neutral-500" key={index}>{itm}</span>))}</div>
     <div className="flex items-center">
       <Link href={'/resume'}>
-      <button className="md:text-xl text-sm font-semibold mr-2 text-neutral-300">Login</button>
+      <button className="md:text-lg text-sm font-semibold mr-2 text-neutral-300">Login</button>
       </Link>
       <Link href={'/resume'}> 
-      <Button size={'sm'} className="md:text-lg md:p-7 rounded-2xl">Get Started</Button>
+      <Button size={'sm'} className="md:text-lg md:p-2 md:bg-neutral-800 rounded-2xl">Get Started</Button>
       </Link>
     </div>
   </div>
