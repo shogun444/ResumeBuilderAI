@@ -24,7 +24,7 @@ features : ['Features',
       <button className="md:text-lg text-sm font-semibold mr-2 text-neutral-300">Login</button>
       </Link>
       <Link href={'/resume'}> 
-      <Button size={'sm'} className="md:text-lg md:p-2 md:bg-neutral-800 rounded-2xl">Get Started</Button>
+      <Button size={'sm'} className="md:text-lg md:p-2 md:bg-neutral-800 md:text-neutral-200 rounded-2xl">Get Started</Button>
       </Link>
     </div>
   </div>
