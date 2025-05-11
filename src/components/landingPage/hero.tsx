@@ -5,9 +5,10 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { Typewriter } from 'react-simple-typewriter'
+import { useRouter } from "next/navigation";
 
 export default function Hero(){
-
+const router = useRouter()
 const arrowvarients ={
   inital : {x:0},
   hover : {x:10}
@@ -96,6 +97,7 @@ const arrowvarients ={
   className="mx-auto flex justify-center group">
     <Link href={'/resume'}>
   <motion.div 
+  onClick={()=>router.push('/resume')}
   initial='inital'
   whileHover='hover'
   className="md:p-3 md:pl-10 md:pr-5 flex items-center justify-center hover:bg-neutral-800 p-3  hover:cursor-pointer   font-semibold md:text-lg text-sm    bg-zinc-900 rounded-4xl text-neutral-300 md:mt-19  mt-50"> Start Building
