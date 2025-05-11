@@ -33,7 +33,7 @@ title={
 className="md:hidden  flex justify-center mx-auto items-center p-2 w-fit"
 onClick={()=>setShowPreview((showPreview : boolean)=>!showPreview)}
 variant={'outline'}
->{showPreview ? 'Show Resume' : 'Show Form'}</Button>
+>{showPreview ? 'Show Form' : 'Show Resume'}</Button>
 <div className="flex justify-between items-center">
 
 
