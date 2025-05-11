@@ -32,7 +32,7 @@ const arrowvarients ={
 >
   
 <div
-  className="h-screen p-1 w-full mt-10 md:pt-16 justify-center items-center mask-t-from-95% md:mask-t-from-80% md:mask-l-from-65% md:mask-r-from-80% 
+  className="h-screen p-1 w-full  md:pt-16 justify-center items-center mask-t-from-95% md:mask-t-from-80% md:mask-l-from-65% md:mask-r-from-80% 
   md:bg-[radial-gradient(circle,rgba(255,255,255,0.15)_0.1px,transparent_1.9px),linear-gradient(to_right,rgba(255,255,255,0.05)_1.6px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1.3px,transparent_1px)] md:bg-[length:60px_60px] md:bg-[position:-19px_48px,center,center]
   "
 >
@@ -94,12 +94,14 @@ const arrowvarients ={
 
   <motion.div
   
-  className="mx-auto mt-50 flex justify-center group">
-
+  className="mx-auto group relative mt-4 flex justify-center group">
+    <span className="absolute bg-gradient-to-r from-transparent  via-purple-500 to-transparent  inset-x-0   rounded-2xl bottom-0  w-[10%] mx-auto h-px"></span>
+    <span className="absolute group-hover:opacity-100 opacity-0 bg-gradient-to-r from-transparent  via-purple-500 to-transparent  inset-x-0   rounded-2xl bottom-0  w-[10%] mx-auto h-[8px] blur-lg "></span>
   <motion.button onClick={()=>router.push('/resume')}
   initial='inital'
   whileHover='hover'
-  className="md:p-3 md:pl-10 md:pr-5 flex items-center justify-center hover:bg-neutral-800 p-3  hover:cursor-pointer   font-semibold md:text-lg text-sm    bg-zinc-900 rounded-4xl text-neutral-300 md:mt-15  mt-10"> Start Building
+  className="md:p-3   md:pl-10 md:pr-5 flex items-center justify-center md:transition-opacity md:duration-100 md:hover:bg-neutral-900 hover:bg-neutral-800 p-3  hover:cursor-pointer   font-semibold md:text-lg text-sm    bg-zinc-900 rounded-2xl text-neutral-300 "> 
+  Start Building
     <motion.span
   
      variants={arrowvarients}
