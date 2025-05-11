@@ -32,8 +32,8 @@ const arrowvarients ={
 >
   
 <div
-  className="h-screen p-1 w-full pt-28 md:pt-20 justify-center items-center mask-t-from-95% md:mask-t-from-80% md:mask-l-from-65% md:mask-r-from-80% 
-  md:bg-[radial-gradient(circle,rgba(255,255,255,0.15)_0.1px,transparent_1.9px),linear-gradient(to_right,rgba(255,255,255,0.05)_1.6px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1.3px,transparent_1px)] md:bg-[length:60px_60px] md:bg-[position:-20px_6px,center,center]
+  className="h-screen p-1 w-full mt-10 md:pt-16 justify-center items-center mask-t-from-95% md:mask-t-from-80% md:mask-l-from-65% md:mask-r-from-80% 
+  md:bg-[radial-gradient(circle,rgba(255,255,255,0.15)_0.1px,transparent_1.9px),linear-gradient(to_right,rgba(255,255,255,0.05)_1.6px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1.3px,transparent_1px)] md:bg-[length:60px_60px] md:bg-[position:-19px_48px,center,center]
   "
 >
 
@@ -90,26 +90,25 @@ const arrowvarients ={
   </span>
 </motion.div>
 
-<div className="absolute w-52 h-52 bg-gradient-to-r animate-spin from-indigo-600 to-purple-600 opacity-20 rounded-full blur-3xl bottom-25 left-1/2 transform -translate-x-1/2 md:-bottom-0 md:w-80 md:h-30 md:animate-none"></div>
+<div className=" absolute w-52 h-52 bg-gradient-to-r animate-spin from-indigo-600 to-purple-600 opacity-20 rounded-full blur-3xl bottom-25 left-1/2 transform -translate-x-1/2 md:-bottom-0 md:w-80 md:h-30 md:animate-none"></div>
 
   <motion.div
   
-  className="mx-auto flex justify-center group">
-    <Link href={'/resume'}>
-  <motion.div 
-  onClick={()=>router.push('/resume')}
+  className="mx-auto mt-50 flex justify-center group">
+
+  <motion.button onClick={()=>router.push('/resume')}
   initial='inital'
   whileHover='hover'
-  className="md:p-3 md:pl-10 md:pr-5 flex items-center justify-center hover:bg-neutral-800 p-3  hover:cursor-pointer   font-semibold md:text-lg text-sm    bg-zinc-900 rounded-4xl text-neutral-300 md:mt-19  mt-50"> Start Building
+  className="md:p-3 md:pl-10 md:pr-5 flex items-center justify-center hover:bg-neutral-800 p-3  hover:cursor-pointer   font-semibold md:text-lg text-sm    bg-zinc-900 rounded-4xl text-neutral-300 md:mt-15  mt-10"> Start Building
     <motion.span
   
      variants={arrowvarients}
     className="md:ml-4 ml-2 font-semibold md:mr-2">
       <ArrowRight  className="font-semibold" size={18} />
-       </motion.span> </motion.div>
-       </Link>
+       </motion.span> </motion.button>
+      
 </motion.div>
-   
+  
     </div>
 
   </div>  </motion.div> 
