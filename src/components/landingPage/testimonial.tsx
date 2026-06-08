@@ -1,8 +1,8 @@
+'use client';
+
 import { motion } from "motion/react";
 
-
-
-export default function Testimonial(){
+export default function Testimonial() {
   const testimonials = [
     {
       name: "Ananya Sharma",
@@ -36,33 +36,56 @@ export default function Testimonial(){
     }
   ];
   
-  return(<>
-  <h1 className="pt-20 text-3xl md:text-5xl bg-gradient-to-r bg-clip-text text-transparent via-neutral-400 to-neutral-300  font-semibold  text-center">Testimonials</h1>
-  <div className="overflow-hidden w-full pt-30">
-  <motion.div 
-  initial={{x : '0%'}}
-  animate = {{x : '-10%'}}
-  transition={ {
-    repeat : Infinity,
-    repeatType : 'loop',
-    duration : 5,
-    ease : 'linear'
-  }}
-  className="flex w-max gap-10">
-  {[...testimonials,...testimonials].map((itm,index)=>(<div key={index} className="border-1 p-4 rounded-md h-70 md:w-100 w-80 font-semibold text-neutral-50">
-    <div className="flex items-center"> 
-    <img className="rounded-full h-16" src={itm.avatar} alt="" />
-    <div  className=" pl-5"> 
-    <h1 className="text-neutral-400">{itm.name}</h1>
-    <h1 className="text-sm text-neutral-600">{itm.role}</h1>
+  return (
+    <div className="w-full flex flex-col items-center justify-center overflow-hidden">
+      <h2 className="font-display font-bold text-3xl md:text-5xl tracking-tight text-neutral-900 dark:text-neutral-50 text-center mb-16">
+        Loved by builders worldwide
+      </h2>
+      
+      <div className="w-full relative py-4">
+        {/* Gradients on Left/Right edge for smooth mask fading */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#f5f5f7] dark:from-neutral-950 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#f5f5f7] dark:from-neutral-950 to-transparent z-10 pointer-events-none" />
+
+        <motion.div 
+          initial={{ x: '0%' }}
+          animate={{ x: '-40%' }}
+          transition={{
+            repeat: Infinity,
+            repeatType: 'loop',
+            duration: 25,
+            ease: 'linear'
+          }}
+          className="flex w-max gap-8 px-8"
+        >
+          {[...testimonials, ...testimonials, ...testimonials].map((item, index) => (
+            <div 
+              key={index} 
+              className="flex flex-col justify-between p-6 rounded-[18px] h-64 w-80 sm:w-96 bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800 shadow-sm transition-shadow duration-200 hover:shadow-md font-sans text-neutral-600 dark:text-neutral-350 shrink-0"
+            >
+              <p className="text-sm italic leading-relaxed">
+                "{item.feedback}"
+              </p>
+
+              <div className="flex items-center gap-4 border-t border-neutral-100 dark:border-neutral-800 pt-4 mt-auto"> 
+                <img 
+                  className="rounded-full h-11 w-11 object-cover border border-neutral-200/50 dark:border-neutral-700/50" 
+                  src={item.avatar} 
+                  alt={item.name} 
+                />
+                <div className="flex flex-col text-left"> 
+                  <span className="font-display font-semibold text-sm text-neutral-900 dark:text-neutral-100">
+                    {item.name}
+                  </span>
+                  <span className="font-sans text-[11px] text-neutral-400 dark:text-neutral-500 font-medium">
+                    {item.role}
+                  </span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </motion.div>
+      </div>
     </div>
-    
-    </div>
-  
-   
-    <h1 className="mt-5">{itm.feedback}</h1>
-  </div>))}
-  </motion.div>
-</div>
-  </>)
+  );
 }

@@ -8,7 +8,7 @@ import Image from "next/image";
 export default function Home() {
   return (
    <>
-   <div className="min-h-screen min-w-full bg-neutral-950"> 
+   <div className="min-h-screen min-w-full bg-[#f5f5f7] dark:bg-neutral-950 text-neutral-900 dark:text-neutral-50 selection:bg-neutral-200 dark:selection:bg-neutral-800 antialiased transition-colors duration-300 font-sans"> 
    <Navbar/>
    <Hero/>
    <Body/>
