@@ -46,37 +46,30 @@ export default function Body() {
     }
   };
 
-  // Apple-inspired copy: [Strong statement]. [Supporting explanation]
   const features = [
     {
-      tag: 'AI WRITE',
-      heading: 'Improve every application',
-      desc: 'Highlight your achievements with precise, metrics-driven professional copy suggestions.'
+      heading: 'Improve every application.',
+      desc: 'Receive suggestions that strengthen impact and relevance.'
     },
     {
-      tag: 'TEMPLATES',
-      heading: 'Select designed templates',
+      heading: 'Select designed templates.',
       desc: 'Choose layout options built for extreme readability and ATS compliance.'
     },
     {
-      tag: 'EDITOR',
-      heading: 'Edit sections instantly',
-      desc: 'Organize experience milestones, customize spacing, and refine layout panels instantly.'
+      heading: 'Edit sections instantly.',
+      desc: 'Organize experience milestones, customize spacing, and refine layout panels.'
     },
     {
-      tag: 'COMPLIANCE',
-      heading: 'Pass ATS screening',
-      desc: 'Scan formatting, keyword frequency, and sections to maximize matching success.'
+      heading: 'Pass ATS screening.',
+      desc: 'Optimize keywords, formatting, and structure before you apply.'
     },
     {
-      tag: 'REVIEWS',
-      heading: 'Get review suggestions',
-      desc: 'Analyze drafting content against industry benchmarks to identify weaknesses early.'
+      heading: 'Get review suggestions.',
+      desc: 'Analyze drafting content against industry benchmarks to identify weaknesses.'
     },
     {
-      tag: 'TRACKING',
-      heading: 'Track active applications',
-      desc: 'Organize application pipelines, schedules, and analytics charts in one interface.'
+      heading: 'Track active applications.',
+      desc: 'Organize application pipelines, schedules, and analytics charts in one place.'
     }
   ];
 
@@ -164,9 +157,9 @@ export default function Body() {
     <div className="w-full transition-colors duration-300 bg-[#f5f5f7] dark:bg-neutral-950">
 
       {/* Features Section */}
-      <section id="features" className="py-24 md:py-36 max-w-6xl mx-auto px-6 overflow-hidden bg-transparent">
+      <section id="features" className="py-24 md:py-36 bg-transparent w-full overflow-hidden">
         {/* Header and Controls */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 mb-12 w-full">
+        <div className="max-w-6xl mx-auto px-6 mb-12 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 w-full">
           <div className="flex flex-col gap-3 text-left max-w-xl">
             <h2 className="font-display font-semibold text-3xl md:text-5xl tracking-tight text-[#1d1d1f] dark:text-[#f5f5f7]">
               Build resumes faster.
@@ -201,7 +194,7 @@ export default function Body() {
         <div
           ref={scrollContainerRef}
           onScroll={handleScroll}
-          className="flex gap-6 overflow-x-auto scrollbar-none snap-x snap-mandatory pb-6 -mx-6 px-6"
+          className="flex gap-6 overflow-x-auto scrollbar-none snap-x snap-mandatory pb-6 ml-[max(24px,calc((100vw-1152px)/2+24px))] pr-[max(24px,calc((100vw-1152px)/2+24px))]"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {features.map((item, index) => (
@@ -209,16 +202,14 @@ export default function Body() {
               key={index}
               className="group snap-start shrink-0 h-[360px] w-[290px] sm:w-[330px] flex flex-col justify-between p-8 rounded-[24px] bg-white dark:bg-[#1d1d1f] border border-[#e5e5e7] dark:border-neutral-800/80 shadow-sm transition-all duration-300 relative select-none"
             >
-              <div className="flex flex-col gap-4">
-                <span className="text-[10px] tracking-wider uppercase font-bold text-[#86868b] dark:text-neutral-500">
-                  {item.tag}
-                </span>
+              <div className="flex flex-col gap-4 text-left">
+                {/* Heading: Manrope 600, 24px-32px, max 2 lines */}
+                <h3 className="font-display font-semibold text-[24px] sm:text-[28px] md:text-[32px] leading-[1.15] tracking-tight text-[#1d1d1f] dark:text-[#f5f5f7] line-clamp-2">
+                  {item.heading}
+                </h3>
 
-                {/* Inline strong statement + supporting description constrained to 32ch */}
-                <p className="font-sans text-sm sm:text-base leading-[1.45] text-[#6e6e73] dark:text-neutral-400 max-w-[32ch] text-left">
-                  <span className="font-semibold text-[#1d1d1f] dark:text-[#f5f5f7]">
-                    {item.heading}.{" "}
-                  </span>
+                {/* Description: Inter 400, 17px-18px, max 3 lines, max-width 32ch */}
+                <p className="font-sans font-normal text-[17px] sm:text-[18px] leading-[1.45] text-[#6e6e73] dark:text-neutral-400 max-w-[32ch] line-clamp-3">
                   {item.desc}
                 </p>
               </div>
